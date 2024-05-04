@@ -19,7 +19,12 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.pages.dashboard.home');
+        try {
+            return view('admin.pages.dashboard.home');
+        } 
+        catch (\Exception $e) {
+            return back()->withError($e->getMessage());
+        }
     }
 
 
