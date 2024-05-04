@@ -27,6 +27,18 @@ class AdminController extends Controller
         }
     }
 
+    public function profile()
+    {
+        try {
+            return view('admin.pages.profile.index');
+        } 
+        catch (\Exception $e) {
+            return back()->withError($e->getMessage());
+        }
+    }
+
+    
+
 
 
 
